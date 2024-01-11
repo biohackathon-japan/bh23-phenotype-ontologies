@@ -96,7 +96,10 @@ Also within a character set, context is important. For example, while the word �
 
 Naturally, the complexity of the Japanese language hinted at above poses problems to automatic machine translation. Tools like Google Translate and DeepL are used to support the translation efforts, however – manual curation is needed to ensure highest quality.  See figure 1 for the proposed workflow to translate HPO and MP from English to Japanese.   
 
-![Fig1](./Fig1.jpg)
+
+![Fig1](./Fig1.png)
+
+
 Figure 1: Proposed workflow for HPO/MP translation, taken from “Choosing preferable labels for the Japanese translation of the Human Phenotype Ontology” [8] 
 
 
@@ -121,6 +124,9 @@ This observation reveals that there are many structural ambiguities. This lack o
 1: Mapping between ontologies only with the key upper concepts：The main usage of mapped ontology in inter-species is the phenotype translation of human and model organisms. After the phenotype translation, researchers will move on to analyse more detail in model organisms. Since perfect ontology mapping is impossible in an inter-species manner, this would be one of the alternatives for usage. But even in this choice, granularity of terms needs to be aligned. 
 2: Layer alignment for end-phenotypes：The end-phenotypes are the detailed descriptions of phenomes, so layer alignment of these terms with compression of layers based on concepts would be helpful. However, this also requires detailed understanding of each term in the context of categories and branching.
 Above two may be possible, if the ontology structure can be transformed flexibly and freely. But this may require assigning meaning to terms and branches. Not only for the mapping, organising the layer in terms of inter-species manner will help for understanding and improvement for visibility. These problems might also exist in other ontology and how to deal with these fundamental problems would be helpful to map with other model organisms.
+Figure 2.
+
+![Fig2](./Fig2.png)
 
 
 # HPO-MP interoperability 2 - definition analysis with LLM
@@ -130,8 +136,12 @@ Large Language Models (LLMs) such as LLaMA and GPT have demonstrated that they a
 
 ## Outcomes
 We implemented a sentence embedding model using the Python transformers library based on the bert-base-uncased pre-trained model. We obtained all definitions for classes from HPO and MP and generated a phrase-level embedding; to achieve this goal, we used the transformer to generate an embedding for each word and then aggregated the embeddings using the mean aggregation to generate the phrase embedding. To determine similarity, we used both cosine similarity and the Euclidean distance.
-Fig. 2 shows a TSNE for the generated embeddings. As can be seen in the figure, there is a relatively strong separation between MP and HPO definitions, demonstrating that they are different and not recognized as very similar. One of the reasons for this separation may be that MP definitions are often substantially shorter and may not always be formulated as a full sentence, whereas definitions in HPO are full sentences and may even span multiple sentences. 
-Figure 2. TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.
+Fig. 3 shows a TSNE for the generated embeddings. As can be seen in the figure, there is a relatively strong separation between MP and HPO definitions, demonstrating that they are different and not recognized as very similar. One of the reasons for this separation may be that MP definitions are often substantially shorter and may not always be formulated as a full sentence, whereas definitions in HPO are full sentences and may even span multiple sentences. 
+
+Figure 3. TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.
+
+![Fig3](./Fig3.png)
+
 Github Link: https://github.com/leechuck/biohack23 
 
 # HP-MP interoperability 3 - LLM based Alignment workflow suggestions for axioms, labels, and definitions for HPO and MP
@@ -147,9 +157,13 @@ In summary, ChatGPT/GPT-4 can be applied to evaluating ontology alignment. Where
 
 
 2. Towards alignment with consideration of disease interoperability
-The differences in granularity between HPO and MP hierarchies cause difficulties in ontology alignment. For example, HPO HP:001156 Brachydactyly has more rich subclasses of some distinct patterns of shortened digits (brachydactyly types A-E) dependent on disease classification. Therefore, developing a core reference ontology from general to species-specific layers is desirable concerning ontology alignment. Unified phenotype ontology (uPheno) [12] is a good candidate ontology. However, uPheno includes a large number of entities based on structural or morphological perspectives, such as ‘abnormal blood vessel morphology’ (UPHENO_0020584), ‘abnormal artery morphology’ (UPHENO: 0019771), and ‘abnormal systemic artery morphology’ (UPHENO: 0020587). Such entities lead to multiple inheritances, which cannot help us understand the inherent phenotypes nor help us find associations of diseases. As subclasses of general phenotypes from PATO, we need a reference ontology having hierarchical sub-trees with single inheritance, for example, ‘constricted (PATO: 0001847),’ ‘vascular stenosis,’ ‘arterial stenosis,’ and ‘coronary stenosis　(Fig. 3).
+The differences in granularity between HPO and MP hierarchies cause difficulties in ontology alignment. For example, HPO HP:001156 Brachydactyly has more rich subclasses of some distinct patterns of shortened digits (brachydactyly types A-E) dependent on disease classification. Therefore, developing a core reference ontology from general to species-specific layers is desirable concerning ontology alignment. Unified phenotype ontology (uPheno) [12] is a good candidate ontology. However, uPheno includes a large number of entities based on structural or morphological perspectives, such as ‘abnormal blood vessel morphology’ (UPHENO_0020584), ‘abnormal artery morphology’ (UPHENO: 0019771), and ‘abnormal systemic artery morphology’ (UPHENO: 0020587). Such entities lead to multiple inheritances, which cannot help us understand the inherent phenotypes nor help us find associations of diseases. As subclasses of general phenotypes from PATO, we need a reference ontology having hierarchical sub-trees with single inheritance, for example, ‘constricted (PATO: 0001847),’ ‘vascular stenosis,’ ‘arterial stenosis,’ and ‘coronary stenosis　(Fig. 4).
 
-Figure 3.　Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
+
+![Fig4](./Fig4.png)
+
+
+Figure 4.　Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
 Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: domain-independent layer, biomedical dependent layer, and homeostasis imbalance-dependent layer, and utilizes PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, the disease ontology DOID in the biomedical dependent layer described by OWL-DL. Therefore, the HoIP schema may contribute to ontology alignment.　HoIP is based on manual annotation, which is costly; if the LLM can handle complex knowledge by working with the ontology and dynamically learning interpretations of various information, both the ontology and the LLM can amplify knowledge with each other, generating a transparent and robust knowledge base.
 
 # HP-MP interoperability 4 - Exploration of model mice relevant to human phenotypes and diseasesO
@@ -167,10 +181,10 @@ Executing a SPARQL query for the integrated bioresource KG to explore model mice
 We obtained 1875 mice relevant to 8834 HPO terms and 1846 mice applicable to 7833 OMIM and 4259 Orphanet Rare Disease Ontology (ORDO) terms (Fig.4). However, we could not define the 1846 mice as disease models because the mice just related to human phenotypes associated with diseases.
 
 
+![Fig5](./Fig5.png)
 
 
-
-Figure 4. Results of ontology term mapping to the RIKEN model mice.
+Figure 5. Results of ontology term mapping to the RIKEN model mice.
 
 # Future work
 
