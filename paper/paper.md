@@ -96,7 +96,7 @@ Also within a character set, context is important. For example, while the word �
 
 Naturally, the complexity of the Japanese language hinted at above poses problems to automatic machine translation. Tools like Google Translate and DeepL are used to support the translation efforts, however – manual curation is needed to ensure highest quality.  See figure 1 for the proposed workflow to translate HPO and MP from English to Japanese.   
 
-(./fig1.png)
+![Fig1](./Fig1.jpg)
 Figure 1: Proposed workflow for HPO/MP translation, taken from “Choosing preferable labels for the Japanese translation of the Human Phenotype Ontology” [8] 
 
 
