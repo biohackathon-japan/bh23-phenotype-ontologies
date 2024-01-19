@@ -139,10 +139,11 @@ Large Language Models (LLMs) such as LLaMA and GPT have demonstrated that they a
 ## Outcomes
 We implemented a sentence embedding model using the Python transformers library based on the bert-base-uncased pre-trained model. We obtained all definitions for classes from HPO and MP and generated a phrase-level embedding; to achieve this goal, we used the transformer to generate an embedding for each word and then aggregated the embeddings using the mean aggregation to generate the phrase embedding. To determine similarity, we used either cosine similarity or the Euclidean distance.
 
-Fig. 2 shows a TSNE for the generated embeddings. As can be seen in the figure, there is a relatively strong separation between MP and HPO definitions, demonstrating that they are different and not recognized as very similar. One of the reasons for this separation may be that MP definitions are often substantially shorter and may not always be formulated as a full sentence, whereas definitions in HPO are full sentences and may even span multiple sentences. 
+Fig.5 shows a TSNE for the generated embeddings. As can be seen in the figure, there is a relatively strong separation between MP and HPO definitions, demonstrating that they are different and not recognized as very similar. One of the reasons for this separation may be that MP definitions are often substantially shorter and may not always be formulated as a full sentence, whereas definitions in HPO are full sentences and may even span multiple sentences. 
 
 ![Fig5](./Fig5.png)
-Figure 3: TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.
+
+Figure 5: TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.
 Github Link: https://github.com/leechuck/biohack23 
 
 # LLM based Alignment workflow suggestions for axioms, labels, and definitions for HPO and MP
@@ -151,20 +152,20 @@ Github Link: https://github.com/leechuck/biohack23
 The challenge in cross-species phenotypic mapping and alignment is handling species-specific differences. In order to overcome difficulties, it is necessary to consider semantic similarity beyond mere label matching. This study investigated whether Large Language Models (LLMs) support cross-species phenotypic ontology alignment toward interoperability between phenotype and disease. We used ChatGPT / GPT-4 and explored the performance to compare HPO and MP ontologies.
 
 ## Outcomes
-1.	Ontology alignment evaluation  
+1.Ontology alignment evaluation  
 First, if no ontology information was not given, such as definitions or subclasses, ChatGPT made comparative evaluations based on label matches. In addition, asking ChatGPT to consider the semantic similarity, the evaluation scores varied widely over three trials since the evaluation was based on pre-trained general knowledge independent of domain-specific ontologies. Next, in addition to the labels, we gave the information on the definitions in each ontology using annotation properties in OWL. As a result, comparative evaluation was possible regarding their semantic similarity. Furthermore, logic-based evaluation was possible using owl:equivalentClass, even if their labels were different. For example, whereas MP:0002544 brachydactyly has a different label than HP:11927 Short digit, GPT-4 rated their similarity scores as high since their owl:equivalentClass axioms show both of which have part ‘decreased length’ and inhere in ‘digit’  described in the same Entity-Quality (EQ) manner.
 
 In summary, ChatGPT/GPT-4 can be applied to evaluating ontology alignment. Whereas AI hallucinations are problems, prompt learning using logical definitions of ontology will contribute to helping reduce risks and be more cost-effective than fine-tuning. 
 
 
-2. Towards alignment with consideration of disease interoperability
-The differences in granularity between HPO and MP hierarchies cause difficulties in ontology alignment. For example, HPO HP:001156 Brachydactyly has more rich subclasses of some distinct patterns of shortened digits (brachydactyly types A-E) dependent on disease classification. Therefore, developing a core reference ontology from general to species-specific layers is desirable concerning ontology alignment. The Unified phenotype ontology (uPheno) [12] is a good candidate ontology. However, uPheno includes a large number of entities based on structural or morphological perspectives, such as ‘abnormal blood vessel morphology’ (UPHENO_0020584), ‘abnormal artery morphology’ (UPHENO: 0019771), and ‘abnormal systemic artery morphology’ (UPHENO: 0020587), as well as entities based on functional abnormalities (such as ‘arterial stenosis’). Combining these entities in a single hierarchy leads to differences in what distinguishes subclasses, and potentially also differences in granularity. These differences make it more challenging to comprehend ontology content, and may also limit our ability to find diseases by semantic similarity.  An alternative is to structure phenotypes in single hierarchies based on common classification criteria 　(Fig. 3).
+2.Towards alignment with consideration of disease interoperability
+The differences in granularity between HPO and MP hierarchies cause difficulties in ontology alignment. For example, HPO HP:001156 Brachydactyly has more rich subclasses of some distinct patterns of shortened digits (brachydactyly types A-E) dependent on disease classification. Therefore, developing a core reference ontology from general to species-specific layers is desirable concerning ontology alignment. The Unified phenotype ontology (uPheno) [12] is a good candidate ontology. However, uPheno includes a large number of entities based on structural or morphological perspectives, such as ‘abnormal blood vessel morphology’ (UPHENO_0020584), ‘abnormal artery morphology’ (UPHENO: 0019771), and ‘abnormal systemic artery morphology’ (UPHENO: 0020587), as well as entities based on functional abnormalities (such as ‘arterial stenosis’). Combining these entities in a single hierarchy leads to differences in what distinguishes subclasses, and potentially also differences in granularity. These differences make it more challenging to comprehend ontology content, and may also limit our ability to find diseases by semantic similarity.  An alternative is to structure phenotypes in single hierarchies based on common classification criteria 　(Fig.6).
 
 
 ![Fig6](./Fig6.png)
 
 
-Figure 4: Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
+Figure6: Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
 The Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: a domain-independent layer, a biomedical dependent layer, and a homeostasis imbalance-dependent layer. HoIP utilises PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, and the Disease Ontology (DOID) in the biomedical dependent layer. Therefore, the HoIP schema may contribute to ontology alignment.　While HoIP is based on manual annotation, we intend to evaluate the use of LLMs to automate part of the HoIP curation in the future. 
 
 # Exploration of model mice relevant to human phenotypes and diseases by leveraging HPO and MP
@@ -185,7 +186,7 @@ We obtained 1875 mice relevant to 8834 HPO terms and 1846 mice applicable to 783
 ![Fig7](./Fig7.png)
 
 
-Figure 5: Results of ontology term mapping to the RIKEN model mice.
+Figure7: Results of ontology term mapping to the RIKEN model mice.
 
 # Future work
 
