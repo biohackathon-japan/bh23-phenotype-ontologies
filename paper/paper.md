@@ -59,8 +59,6 @@ authors_short: Dohi \emph{et al.}
 
 Ontologies play a crucial role in data management and especially in life science, they have been indispensable for decades as the complexity of life science data requires rigor. Biomedical ontologies often undergo change and improvement, as e.g. disease and phenotype ontologies develop constantly along with our scientific understanding. In order to bridge the gap between ontologies and annotated datasets and thus to semantically enable applications and datasets to retrieve insights and improve interoperability, ontology mapping plays a key role [1]. 
 
-
-
 To implement a sophisticated search supported by semantics, interoperability to address cross-disciplinary needs is crucial. In this paper we focus on different aspects of interoperability of ontologies, especially in the phenotype and disease domain and how they could be improved: 
 
 One aspect is not technical but linguistic and social interoperability - improving the usage and understanding of datasets through translation of ontologies into other languages like Japanese. While this might not seem challenging at first from a scientific or mathematical perspective, it is actually a very challenging task as translations in general might introduce unacceptable fuzziness: An exact translation can be viewed similarly strict as a skos:exactMatch statement in ontology matching - but sometimes such an exact translation is not possible, especially for languages from different families, e.g. Indo-Germanic, Japanese or Arabic.   
@@ -70,8 +68,6 @@ Another aspect of this paper is the interoperability between the HPO and Mammali
 In addition to data searching, a bird's-eye understanding of the data set is important for scientists. Users not only want detailed information on individual pieces of information, they also want to know where their interest targets within their own research area. The need for good overview and easy understanding of the overall and partial structure of the data for clinicians and biologists working in a variety of fields is also a major challenge that cannot be ignored. Depending on the domain and site of use, synonyms and definitions can vary which would not be noticed without communication with the end users. Ontology can help understanding the domain’s knowledge by providing vocabularies or terms with their classification and relationships.
 
 Because of this multifaceted nature of the problem, a multidisciplinary hackathon that includes not only linguists and informaticians, but also clinicians and life scientists is an excellent opportunity to share current status and identify challenges for the future. During the BioHackJP 2023, a variety of approaches were discussed and evaluated. In this paper, we report overviews of the result of each investigation and discuss future works to address these challenges.
-
-
 
 # Ontology translation to Japanese - current status and issues 
 
@@ -85,20 +81,21 @@ Ontologies rely on precision and correctness and thus translating languages as d
  The context matters in order to recognize the symbol correctly as words might be pronounced the same way in Japanese but have different meanings and different character sets might be used - depending on how they are used or who uses them. See figure 1 for concrete examples. 
 Kanji characters are different from kana as they do not represent syllables but concrete words or concepts. Therefore there are many thousands of characters in kanji, which have to be memorized. 
 
+![Fig1](./Fig1.png)
+
 Figure 1: Japanese words with the same pronunciation but different meanings
 
 Also within a character set, context is important. For example, while the word ‘male’ is used in English to describe the sex of both mammals and humans, this is not the case in Japanese - different symbols are used to express the gender of animals than of humans (see figure 2). 
+
+![Fig2](./Fig2.png)
 
 Figure 2: Examples of using different symbols within the same character set (Kanji) for the same English word in Japanese - depending on the context
 
 Naturally, the complexity of the Japanese language hinted at above poses problems to automatic machine translation. Tools like Google Translate and DeepL are used to support the translation efforts, however – manual curation is crucial to ensure high quality. See figure 1 for the proposed workflow to translate HPO and MP from English to Japanese.
  
+![Fig3](./Fig3.png)
 
-
-![Fig1](./Fig1.png)
-
-
-Figure 1: Proposed workflow for HPO/MP translation, taken from “Choosing preferable labels for the Japanese translation of the Human Phenotype Ontology” [8] 
+Figure 3: Proposed workflow for HPO/MP translation, taken from “Choosing preferable labels for the Japanese translation of the Human Phenotype Ontology” [8] 
 
 
 # Improving ontology alignments and mappings
