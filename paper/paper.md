@@ -116,20 +116,24 @@ Furthermore, ontology mappings between HP and MP from different sources were use
 
 ## Background
 Here, we examined how HPO and MPO are perceived by the end-users, who are closest to the field, from a structural point of view, referring to the opinions of clinicians and medical researchers who have many years of experience in behavioural studies using mice. At first, we attempted to examine whether there are differences in the structure of the ontology between HPO and MPO. To address this, we extracted terms in each layer of the ontologies to analyse the structure of HPO and MPO, and features between each step between the layers. We identified several structural differences within the ontologies that make mapping challenging.
-① High-level classification：In the 1st layer, most highest concepts were listed based on anatomy, systems and time-points etc. We found that even in the 1st layer there are 6 differences between HPO and MPO after manual mapping. Among the 6 different terms, one was in the HPO (constitutional symptoms) and the others in MPO (normal phenotype, mortality/aging, no phenotypic analysis). Some of the higher concepts were divided into lower concepts in HPO but not in MPO.
-② Step：The number of layers and the numbers of terms in each layer will be dependent on the complexities of anatomy, systems and time-points etc. For example, the number of terms in 8th layer, HPO is 4877 but MPO is 2394, showing substantial differences between ontologies. In addition to the high-level classification differences, the classification of the lower concepts are not consistent between both ontologies. 
-③ Granularity：When the above two issues are combined, the endo-phenotype at the same granularity is placed on different layers of the  two ontologies, making it challenging to visualise terms of the same granularity on the same layer, leading to intuitive understanding. These differences in granularity makes it difficult for clinicians and model organism researchers to communicate.
+
+1: High-level classification：In the 1st layer, most highest concepts were listed based on anatomy, systems and time-points etc. We found that even in the 1st layer there are 6 differences between HPO and MPO after manual mapping. Among the 6 different terms, one was in the HPO (constitutional symptoms) and the others in MPO (normal phenotype, mortality/aging, no phenotypic analysis). Some of the higher concepts were divided into lower concepts in HPO but not in MPO.
+
+2: Step：The number of layers and the numbers of terms in each layer will be dependent on the complexities of anatomy, systems and time-points etc. For example, the number of terms in 8th layer, HPO is 4877 but MPO is 2394, showing substantial differences between ontologies. In addition to the high-level classification differences, the classification of the lower concepts are not consistent between both ontologies. 
+
+3: Granularity：When the above two issues are combined, the endo-phenotype at the same granularity is placed on different layers of the  two ontologies, making it challenging to visualise terms of the same granularity on the same layer, leading to intuitive understanding. These differences in granularity makes it difficult for clinicians and model organism researchers to communicate.
 
 ## Outcomes
 Our observation reveals that there are several structural differences between the ontologies. These structural differences may be a barrier to collaboration with domain experts which will affect further mapping and collaborative validation. Furthermore, our analysis also identified some areas that can be improved:
+
 1: Mapping key high-level concepts：One of the main uses of aligned phenotype ontologies is the inter-species phenotype translation, in particular between human and model organisms. After the phenotype translation, researchers will often move on to analyse more details in model organisms. Since perfect ontology mapping may be impossible when considering two different species, one alternative would be to focus on high-level concepts primarily as these allow access to the more fine-grained phenotype terms in either ontology. However, even in this choice, granularity of terms is important and needs to be considered in the alignment. 
+
 2: Layer alignment for endo-phenotypes：The endo-phenotypes are the detailed descriptions of phenotypes Therefore, aligning each individual layer based on the endophenotypes that are represented would be helpful to ensure that the same distinctions are being made. However, this also requires detailed understanding of each term in the context of the classification criteria used and therefore the  branching of the taxonomy.
 While these two approaches maybe possible, it requires substantial revision of the two ontologies. However, the issues we identify not only exist in HPO and MP, but also in alignments of other ontologies. Therefore, finding a solution to these problems would be useful in other mapping efforts as well. 
 
-Figure 4:
-
 ![Fig4](./Fig4.png)
 
+Figure 4: Structural differences between ontologies due to structural features of ontologies
 
 # HPO-MP definition analysis with LLM
 
@@ -276,11 +280,12 @@ DOI: https://doi.org/10.1101/2023.08.30.555283
 ## Supplemental data
 
 Supplemental data 1: Collected HP-MP mapping data including ZP, and WBP. They include 14,902 HP-MP mapping data in total.
- - 1 uPheno2 [HP-MP]: http://obofoundry.org/ontology/upheno.html 
- - 2 mp_hp-align equiv [HP-MP]: https://github.com/obophenotype/upheno/blob/master/hp-mp/mp_hp-align-equiv.owl 
- - 3 Mapping commons (mh_mapping_initiative) [HP-MP]: https://github.com/mapping-commons/mh_mapping_initiative 
- - 4 HP-MP SSSOM [HP-MP]: https://github.com/mapping-commons/sssom 
- - 5 uPheno [HP-MP, HP-ZP, and HP-WBP]: https://github.com/obophenotype/upheno 
+
+1: uPheno2 [HP-MP]: http://obofoundry.org/ontology/upheno.html 
+2: mp_hp-align equiv [HP-MP]: https://github.com/obophenotype/upheno/blob/master/hp-mp/mp_hp-align-equiv.owl 
+3: Mapping commons (mh_mapping_initiative) [HP-MP]: https://github.com/mapping-commons/mh_mapping_initiative 
+4: HP-MP SSSOM [HP-MP]: https://github.com/mapping-commons/sssom 
+5: uPheno [HP-MP, HP-ZP, and HP-WBP]: https://github.com/obophenotype/upheno 
 
 Supplemental data 2: Overview of the HP-MP mapping data (excluded uPheno data): https://github.com/kushidat/outcomes_BH23/blob/main/Figure/Overview_of_HP-MP_mapping_data.png 
 
