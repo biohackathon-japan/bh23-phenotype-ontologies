@@ -126,9 +126,9 @@ Our observation reveals that there are several structural differences between th
 2: Layer alignment for endo-phenotypes：The endo-phenotypes are the detailed descriptions of phenotypes Therefore, aligning each individual layer based on the endophenotypes that are represented would be helpful to ensure that the same distinctions are being made. However, this also requires detailed understanding of each term in the context of the classification criteria used and therefore the  branching of the taxonomy.
 While these two approaches maybe possible, it requires substantial revision of the two ontologies. However, the issues we identify not only exist in HPO and MP, but also in alignments of other ontologies. Therefore, finding a solution to these problems would be useful in other mapping efforts as well. 
 
-Figure 2:
+Figure 4:
 
-![Fig2](./Fig2.png)
+![Fig4](./Fig4.png)
 
 
 # HPO-MP definition analysis with LLM
@@ -141,7 +141,7 @@ We implemented a sentence embedding model using the Python transformers library 
 
 Fig. 2 shows a TSNE for the generated embeddings. As can be seen in the figure, there is a relatively strong separation between MP and HPO definitions, demonstrating that they are different and not recognized as very similar. One of the reasons for this separation may be that MP definitions are often substantially shorter and may not always be formulated as a full sentence, whereas definitions in HPO are full sentences and may even span multiple sentences. 
 
-![Fig3](./Fig3.png)
+![Fig5](./Fig5.png)
 Figure 3: TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.
 Github Link: https://github.com/leechuck/biohack23 
 
@@ -161,7 +161,7 @@ In summary, ChatGPT/GPT-4 can be applied to evaluating ontology alignment. Where
 The differences in granularity between HPO and MP hierarchies cause difficulties in ontology alignment. For example, HPO HP:001156 Brachydactyly has more rich subclasses of some distinct patterns of shortened digits (brachydactyly types A-E) dependent on disease classification. Therefore, developing a core reference ontology from general to species-specific layers is desirable concerning ontology alignment. The Unified phenotype ontology (uPheno) [12] is a good candidate ontology. However, uPheno includes a large number of entities based on structural or morphological perspectives, such as ‘abnormal blood vessel morphology’ (UPHENO_0020584), ‘abnormal artery morphology’ (UPHENO: 0019771), and ‘abnormal systemic artery morphology’ (UPHENO: 0020587), as well as entities based on functional abnormalities (such as ‘arterial stenosis’). Combining these entities in a single hierarchy leads to differences in what distinguishes subclasses, and potentially also differences in granularity. These differences make it more challenging to comprehend ontology content, and may also limit our ability to find diseases by semantic similarity.  An alternative is to structure phenotypes in single hierarchies based on common classification criteria 　(Fig. 3).
 
 
-![Fig4](./Fig4.png)
+![Fig6](./Fig6.png)
 
 
 Figure 4: Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
@@ -182,7 +182,7 @@ We collected external public data, integrated these data with the bioresource KG
 ## Outcomes
 We obtained 1875 mice relevant to 8834 HPO terms and 1846 mice applicable to 7833 OMIM and 4259 Orphanet Rare Disease Ontology (ORDO) terms (Fig.4). However, we could not define the 1846 mice as disease models because the mice just related to human phenotypes associated with diseases.
 
-![Fig5](./Fig5.png)
+![Fig7](./Fig7.png)
 
 
 Figure 5: Results of ontology term mapping to the RIKEN model mice.
