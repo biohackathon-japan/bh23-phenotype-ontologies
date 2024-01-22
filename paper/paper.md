@@ -81,7 +81,7 @@ Ontologies rely on precision and correctness and thus translating languages as d
  The context matters in order to recognize the symbol correctly as words might be pronounced the same way in Japanese but have different meanings and different character sets might be used - depending on how they are used or who uses them. See figure 1 for concrete examples. 
 Kanji characters are different from kana as they do not represent syllables but concrete words or concepts. Therefore there are many thousands of characters in kanji, which have to be memorized. 
 
-![Fig1](./Fig1.png)
+![Figure 1: Japanese words with the same pronunciation but different meanings](./Fig1.png)
 
 Figure 1: Japanese words with the same pronunciation but different meanings
 
