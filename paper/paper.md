@@ -14,7 +14,7 @@ authors:
     affiliation: 2
   - name: Yuki Yamagata
     orcid: 0000-0002-9673-1283
-    affiliation: 3, 2
+    affiliation: 2, 3
   - name: Terue Takatsuki
     orcid: 0000-0003-0011-764X
     affiliation: 4
