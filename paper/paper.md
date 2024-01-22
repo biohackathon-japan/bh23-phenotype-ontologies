@@ -266,11 +266,11 @@ DOI: https://doi.org/10.1101/2023.08.30.555283
 
 Supplemental data 1: Collected HP-MP mapping data including ZP, and WBP. They include 14,902 HP-MP mapping data in total.
 
-1: uPheno2 [HP-MP]: http://obofoundry.org/ontology/upheno.html 
-2: mp_hp-align equiv [HP-MP]: https://github.com/obophenotype/upheno/blob/master/hp-mp/mp_hp-align-equiv.owl 
-3: Mapping commons (mh_mapping_initiative) [HP-MP]: https://github.com/mapping-commons/mh_mapping_initiative 
-4: HP-MP SSSOM [HP-MP]: https://github.com/mapping-commons/sssom 
-5: uPheno [HP-MP, HP-ZP, and HP-WBP]: https://github.com/obophenotype/upheno 
+1. uPheno2 [HP-MP]: http://obofoundry.org/ontology/upheno.html 
+2. mp_hp-align equiv [HP-MP]: https://github.com/obophenotype/upheno/blob/master/hp-mp/mp_hp-align-equiv.owl 
+3. Mapping commons (mh_mapping_initiative) [HP-MP]: https://github.com/mapping-commons/mh_mapping_initiative 
+4. HP-MP SSSOM [HP-MP]: https://github.com/mapping-commons/sssom 
+5. uPheno [HP-MP, HP-ZP, and HP-WBP]: https://github.com/obophenotype/upheno 
 
 Supplemental data 2: Overview of the HP-MP mapping data (excluded uPheno data): https://github.com/kushidat/outcomes_BH23/blob/main/Figure/Overview_of_HP-MP_mapping_data.png 
 
