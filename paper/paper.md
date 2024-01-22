@@ -83,20 +83,13 @@ Kanji characters are different from kana as they do not represent syllables but 
 
 ![Japanese words with the same pronunciation but different meanings](./Fig1.png)
 
-Figure 1: Japanese words with the same pronunciation but different meanings
-
 Also within a character set, context is important. For example, while the word ‘male’ is used in English to describe the sex of both mammals and humans, this is not the case in Japanese - different symbols are used to express the gender of animals than of humans (see figure 2). 
 
-![Fig2](./Fig2.png)
-
-Figure 2: Examples of using different symbols within the same character set (Kanji) for the same English word in Japanese - depending on the context
+![Examples of using different symbols within the same character set (Kanji) for the same English word in Japanese - depending on the context](./Fig2.png)
 
 Naturally, the complexity of the Japanese language hinted at above poses problems to automatic machine translation. Tools like Google Translate and DeepL are used to support the translation efforts, however – manual curation is crucial to ensure high quality. See figure 1 for the proposed workflow to translate HPO and MP from English to Japanese.
  
-![Fig3](./Fig3.png)
-
-Figure 3: Proposed workflow for HPO/MP translation, taken from “Choosing preferable labels for the Japanese translation of the Human Phenotype Ontology” [8] 
-
+![Proposed workflow for HPO/MP translation, taken from “Choosing preferable labels for the Japanese translation of the Human Phenotype Ontology” [8]](./Fig3.png)
 
 # Improving ontology alignments and mappings
 
@@ -131,9 +124,7 @@ Our observation reveals that there are several structural differences between th
 2: Layer alignment for endo-phenotypes: The endo-phenotypes are the detailed descriptions of phenotypes Therefore, aligning each individual layer based on the endophenotypes that are represented would be helpful to ensure that the same distinctions are being made. However, this also requires detailed understanding of each term in the context of the classification criteria used and therefore the  branching of the taxonomy.
 While these two approaches maybe possible, it requires substantial revision of the two ontologies. However, the issues we identify not only exist in HPO and MP, but also in alignments of other ontologies. Therefore, finding a solution to these problems would be useful in other mapping efforts as well. 
 
-![Fig4](./Fig4.png)
-
-Figure 4: Structural differences between ontologies due to structural features of ontologies
+![Structural differences between ontologies due to structural features of ontologies](./Fig4.png)
 
 # HPO-MP definition analysis with LLM
 
@@ -145,9 +136,8 @@ We implemented a sentence embedding model using the Python transformers library 
 
 Fig.5 shows a TSNE for the generated embeddings. As can be seen in the figure, there is a relatively strong separation between MP and HPO definitions, demonstrating that they are different and not recognized as very similar. One of the reasons for this separation may be that MP definitions are often substantially shorter and may not always be formulated as a full sentence, whereas definitions in HPO are full sentences and may even span multiple sentences. 
 
-![Fig5](./Fig5.png)
+![TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.](./Fig5.png)
 
-Figure 5: TSNE visualization of the embeddings generated from definitions in HPO and MP. Embeddings derived from MP are shown in blue, from HPO in red.
 Github Link: https://github.com/leechuck/biohack23 
 
 # LLM based Alignment workflow suggestions for axioms, labels, and definitions for HPO and MP
@@ -166,10 +156,8 @@ In summary, ChatGPT/GPT-4 can be applied to evaluating ontology alignment. Where
 The differences in granularity between HPO and MP hierarchies cause difficulties in ontology alignment. For example, HPO HP:001156 Brachydactyly has more rich subclasses of some distinct patterns of shortened digits (brachydactyly types A-E) dependent on disease classification. Therefore, developing a core reference ontology from general to species-specific layers is desirable concerning ontology alignment. The Unified phenotype ontology (uPheno) [12] is a good candidate ontology. However, uPheno includes a large number of entities based on structural or morphological perspectives, such as ‘abnormal blood vessel morphology’ (UPHENO_0020584), ‘abnormal artery morphology’ (UPHENO: 0019771), and ‘abnormal systemic artery morphology’ (UPHENO: 0020587), as well as entities based on functional abnormalities (such as ‘arterial stenosis’). Combining these entities in a single hierarchy leads to differences in what distinguishes subclasses, and potentially also differences in granularity. These differences make it more challenging to comprehend ontology content, and may also limit our ability to find diseases by semantic similarity.  An alternative is to structure phenotypes in single hierarchies based on common classification criteria (Fig.6).
 
 
-![Fig6](./Fig6.png)
-
-
-Figure6: Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
+![Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.](./Fig6.png)
+ 
 The Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: a domain-independent layer, a biomedical dependent layer, and a homeostasis imbalance-dependent layer. HoIP utilises PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, and the Disease Ontology (DOID) in the biomedical dependent layer. Therefore, the HoIP schema may contribute to ontology alignment. While HoIP is based on manual annotation, we intend to evaluate the use of LLMs to automate part of the HoIP curation in the future.
 
 # Exploration of model mice relevant to human phenotypes and diseases by leveraging HPO and MP
@@ -187,10 +175,7 @@ We collected external public data, integrated these data with the bioresource KG
 ## Outcomes
 We obtained 1875 mice relevant to 8834 HPO terms and 1846 mice applicable to 7833 OMIM and 4259 Orphanet Rare Disease Ontology (ORDO) terms (Fig.4). However, we could not define the 1846 mice as disease models because the mice just related to human phenotypes associated with diseases.
 
-![Fig7](./Fig7.png)
-
-
-Figure7: Results of ontology term mapping to the RIKEN model mice.
+![Results of ontology term mapping to the RIKEN model mice](./Fig7.png)
 
 # Future work
 
