@@ -11,22 +11,22 @@ authors:
     affiliation: 1
   - name: Tatsuya Kushida
     orcid: 0000-0002-0784-4113
-    affilication: 2
+    affiliation: 2
   - name: Yuki Yamagata
     orcid: 0000-0002-9673-1283
-    affilication: 2
+    affiliation: 2
   - name: Terue Takatsuki
     orcid: 0000-0003-0011-764X
-    affilication: 3
+    affiliation: 3
   - name: Jaemoon Shin
     orcid: 0000-0001-5859-601X
-    affilication: 3
+    affiliation: 3
   - name: Hiroshi Masuya
     orcid: 0000-0002-3392-466X
-    affilication: 2
+    affiliation: 2
   - name: Thomas Liener
     orcid: 0000-0003-3257-9937
-    affilication: 4
+    affiliation: 4
   - name: Robert Hoehndorf
     orcid: 0000-0001-8149-5890
     affiliation: 5
