@@ -14,33 +14,35 @@ authors:
     affiliation: 2
   - name: Yuki Yamagata
     orcid: 0000-0002-9673-1283
-    affiliation: 2
+    affiliation: 3
   - name: Terue Takatsuki
     orcid: 0000-0003-0011-764X
-    affiliation: 3
+    affiliation: 4
   - name: Jaemoon Shin
     orcid: 0000-0001-5859-601X
-    affiliation: 3
+    affiliation: 4
   - name: Hiroshi Masuya
     orcid: 0000-0002-3392-466X
     affiliation: 2
   - name: Thomas Liener
     orcid: 0000-0003-3257-9937
-    affiliation: 4
+    affiliation: 5
   - name: Robert Hoehndorf
     orcid: 0000-0001-8149-5890
-    affiliation: 5
+    affiliation: 6
 affiliations:
   - name: National Center of Neurology and Psychiatry, National Institute of Neuroscience, Japan
     index: 1
   - name: RIKEN BioResource Research Center, Japan
     index: 2
-  - name: Database Center for Life Science ROIS-DS, Kashiwa, Chiba, Japan
+  - name: RIKEN Information R&D and Strategy Headquarters, Japan
     index: 3
-  - name: Unaffiliated
+  - name: Database Center for Life Science ROIS-DS, Kashiwa, Chiba, Japan
     index: 4
-  - name: King Abdullah University of Science and Technology, Saudi Arabia
+  - name: Unaffiliated
     index: 5
+  - name: King Abdullah University of Science and Technology, Saudi Arabia
+    index: 6
 date: 30 June 2023
 cito-bibliography: paper.bib
 event: BH23JP
