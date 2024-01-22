@@ -170,14 +170,14 @@ The differences in granularity between HPO and MP hierarchies cause difficulties
 
 
 Figure6: Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
-The Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: a domain-independent layer, a biomedical dependent layer, and a homeostasis imbalance-dependent layer. HoIP utilises PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, and the Disease Ontology (DOID) in the biomedical dependent layer. Therefore, the HoIP schema may contribute to ontology alignment.　While HoIP is based on manual annotation, we intend to evaluate the use of LLMs to automate part of the HoIP curation in the future. 
+The Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: a domain-independent layer, a biomedical dependent layer, and a homeostasis imbalance-dependent layer. HoIP utilises PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, and the Disease Ontology (DOID) in the biomedical dependent layer. Therefore, the HoIP schema may contribute to ontology alignment.　While HoIP is based on manual annotation, we intend to evaluate the use of LLMs to automate part of the HoIP curation in the future.
 
 # Exploration of model mice relevant to human phenotypes and diseases by leveraging HPO and MP
 
 
 ## Background
 
-The RIKEN BioResource Research Center (BRC) is constructing a bioresource knowledge graph (KG) [15]. The users can explore their bioresources (e.g., RIKEN BRC mice relevant to specific MP terms) for the KG. Leveraging human phenotype and disease information, we aimed to expand the information on model mice expected to be used for health care and medical research.　　　
+The RIKEN BioResource Research Center (BRC) is constructing a bioresource knowledge graph (KG) [15]. The users can explore their bioresources (e.g., RIKEN BRC mice relevant to specific MP terms) for the KG. Leveraging human phenotype and disease information, we aimed to expand the information on model mice expected to be used for health care and medical research.
 We collected external public data, integrated these data with the bioresource KG in the triple store: BioResource MetaDatabase, and executed a SPARQL query to explore model mice as follows.
 - Collecting the existing HPO-MP mapping data (see Supplemental data 1, 2)
 - Generating the HPO-MP RDF data from the HPO-MP mapping data.
