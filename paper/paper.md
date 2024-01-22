@@ -170,7 +170,7 @@ The differences in granularity between HPO and MP hierarchies cause difficulties
 
 
 Figure6: Ontology alignment with multiple ontologies and biomedical terminologies. PATO hierarchy is green, HPO hierarchy is right blue, MP is green, uPheno is pink, MeSH is yellow, DOID is orange, and the desirable reference ontology is blue.  
-The Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: a domain-independent layer, a biomedical dependent layer, and a homeostasis imbalance-dependent layer. HoIP utilises PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, and the Disease Ontology (DOID) in the biomedical dependent layer. Therefore, the HoIP schema may contribute to ontology alignment.　While HoIP is based on manual annotation, we intend to evaluate the use of LLMs to automate part of the HoIP curation in the future.
+The Homeostasis Imbalance Process ontology (HoIP) [13, 14] consists of three layers: a domain-independent layer, a biomedical dependent layer, and a homeostasis imbalance-dependent layer. HoIP utilises PATO, HPO, the anatomy ontology UBERON, the Symptom Ontology, and the Disease Ontology (DOID) in the biomedical dependent layer. Therefore, the HoIP schema may contribute to ontology alignment. While HoIP is based on manual annotation, we intend to evaluate the use of LLMs to automate part of the HoIP curation in the future.
 
 # Exploration of model mice relevant to human phenotypes and diseases by leveraging HPO and MP
 
