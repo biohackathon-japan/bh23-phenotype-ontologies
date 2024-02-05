@@ -95,13 +95,13 @@ Naturally, the complexity of the Japanese language hinted at above poses problem
 
 # Improving ontology alignments and mappings
 
-Background
+## Background
 To align ontologies and to find mappings between ontologies is a well described and relevant problem to boost interoperability, however it is still very challenging. The definition of “mapping” or “match” is often interpreted very differently by different people. Strictly speaking, an “exact match” means that two concepts can be used interchangeably. To describe other types of relationships, other properties could be used like skos:broader, skos:narrower or skos:related - to determine the exact type of a mapping can be very challenging automatically and usually, to create a “gold standard”, manual curation and manual quality control of domain experts is needed.   
 
 To capture mappings and their provenance in a standardised way, recently SSSOM, a common standard for sharing ontological mappings was proposed [cite https://doi.org/10.1093/database/baac035]. The core data model of SSSOM is rather simple, as mappings are often exchanged in a tabular format. However, to come to an agreement on which metadata fields are important to capture and store those in a standardised way is a major advantage. Furthermore by agreeing on a standard and including important stakeholders from the start, SSSOM truly helps to align the community. For example, EMBL-EBI’s Ontology Lookup Service or the Mondo ontology started to include/export mappings as SSSOM. There are software packages developed to work with SSSOM and a governance structure in place to oversee future changes and development of the standard. The preferred way to raise issues or ideas is the SSSOM github repository (https://github.com/mapping-commons/sssom).   
 
 
-Outcome 
+## Outcome 
 
 During the biohackathon SSSOM was discussed and proposed as a way to share ontological mappings that might be created in the future. We discussed the difficulties of translating one ontology earlier in this paper, however if we look in addition to multilinguality  also at mappings between ontologies, there clearly is an additional layer of complexity - not only should the translations to e.g. Japanese be correct for each ontology, ideally also the mappings between these ontologies needs to be considered (e.g. exactMatch is a strong semantic statement, so does this also hold for the translated terms?).
 
